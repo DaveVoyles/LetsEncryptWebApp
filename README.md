@@ -1,5 +1,6 @@
 Azure Web App with Let's Encrypt Certificate
 --------------------------------------------
+**This is valid for 90 days.** You must run this command every 90 days to renew your SSL cert. It takes me ~1 minute to do. Not bad for free. You could likely even create an automated powershell script to run in Azure for you. 
 
 This repository contains example code for creating an [Azure Web App](https://azure.microsoft.com/en-us/services/app-service/web/) with a [Let's Encrypt](https://letsencrypt.org/) SSL Certificate. It uses the [ACMESharp](https://github.com/ebekker/ACMESharp) Powershell module. You can install the ACMESharp Module in Powershell with:
 
@@ -24,13 +25,13 @@ If the Web App already exists, it will simple generate a new cert and bind it, e
 
 ### Instructions
 
-	1. From PowerShell, as Administrator, clone this repository 
-	2. Log into Azure via the CLI, with Login-AzureRmAccount
-	3. Set the correct account ID with Set-AzureRmContext <Account #>
-	4. Install-Module -Name AzureRM -AllowClobber
-	5. Install-Module ACMESharp -AllowClobber
-  6. Import-Module -Name AzureRM
-  7. Call the script:
+1. From PowerShell, as Administrator, clone this repository 
+2. Log into Azure via the CLI, with Login-AzureRmAccount
+3. Set the correct account ID with Set-AzureRmContext <Account #>
+4. Install-Module -Name AzureRM -AllowClobber
+5. Install-Module ACMESharp -AllowClobber
+6. Import-Module -Name AzureRM
+7. Call the script:
 
 ```
 .\CreateLetsEncryptWebApp.ps1 -ResourceGroupName "RESOURCE-GROUP-NAME" `
