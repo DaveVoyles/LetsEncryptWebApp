@@ -26,12 +26,13 @@ If the Web App already exists, it will simple generate a new cert and bind it, e
 ### Instructions
 
 1. From PowerShell, as Administrator, clone this repository 
-2. Log into Azure via the CLI, with Login-AzureRmAccount
-3. Set the correct account ID with Set-AzureRmContext <Account #>
-4. Install-Module -Name AzureRM -AllowClobber
-5. Install-Module ACMESharp -AllowClobber
-6. Import-Module -Name AzureRM
-7. Call the script:
+2. Change directories by navigating into the one you just cloned
+3. Log into Azure via the CLI, with ```Login-AzureRmAccount```
+4. Set the correct account ID with ```Set-AzureRmContext <Account #>```
+5. ```Install-Module -Name AzureRM -AllowClobber```
+6. ```Install-Module ACMESharp -AllowClobber```
+7. ```Import-Module -Name AzureRM```
+8. Call the script: (NOTE: must wrap your text in quotes)
 
 ```
 .\CreateLetsEncryptWebApp.ps1 -ResourceGroupName "RESOURCE-GROUP-NAME" `
@@ -39,4 +40,4 @@ If the Web App already exists, it will simple generate a new cert and bind it, e
 -ContactEmail "EMAIL ADDRESS FOR REGISTRATION"
 ```
 
-You'll be prompted to enter a temporary password. You'll also be prompted for the domain aName. 
+You'll be prompted to enter a *temporary password*. You'll also be prompted for the domain name (EX: davevoyles.com). 
