@@ -90,4 +90,3 @@ function Get-WebAppPublishingCredentials
         "url" = $url
     }
 }
-
